@@ -1,21 +1,9 @@
-const menuIcon = document.querySelector('.menu-icon');
-const menuContent = document.querySelector('.menu-content');
+// JavaScript code to toggle menu
+const menuIcon = document.querySelector('.hamburger');
+const menuContent = document.querySelector('.menu');
 
 function toggleMenu() {
-    if (menuContent.style.display === 'none' || window.getComputedStyle(menuContent).display === 'none') {
-        menuContent.style.display = 'block';
-    } else {
-        menuContent.style.display = 'none';
-    }
+menuIcon.classList.add("visible")
 }
 
 menuIcon.addEventListener('click', toggleMenu);
-
-// Update menu display on window resize
-window.addEventListener('resize', function() {
-    if (window.innerWidth >= 701 && window.getComputedStyle(menuContent).display === 'none') {
-        menuContent.style.display = 'block';
-    } else if (window.innerWidth < 701 && window.getComputedStyle(menuContent).display !== 'none') {
-        menuContent.style.display = 'none';
-    }
-});
